@@ -9,7 +9,9 @@ Since manticore offers a MySQL compatible interface and drizzle supports MySQL, 
 
 To prepare a manticore instance:
 
-`docker run -e EXTRA=1 -p 127.0.0.1:9306:9306 --name manticore --rm -d manticoresearch/manticore && echo "Waiting for Manticore docker to start. Consider mapping the data_dir to make it start faster next time" && until docker logs manticore 2>&1 | grep -q "accepting connections"; do sleep 1; echo -n .; done && echo && docker exec -it manticore mysql && docker stop manticore`
+```
+docker run -e EXTRA=1 -p 127.0.0.1:9306:9306 --name manticore --rm -d manticoresearch/manticore && echo "Waiting for Manticore docker to start. Consider mapping the data_dir to make it start faster next time" && until docker logs manticore 2>&1 | grep -q "accepting connections"; do sleep 1; echo -n .; done && echo && docker exec -it manticore mysql && docker stop manticore
+```
 
 To install dependencies:
 
